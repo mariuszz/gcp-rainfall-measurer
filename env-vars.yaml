@@ -1,0 +1,2 @@
+BUCKET_NAME: "rainfall-wroclaw"
+RDF_URL: "https://www.wroclaw.pl/open-data/dataset/deszczomierzeodczytdzienny_data.xml"

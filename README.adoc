@@ -1,0 +1,14 @@
+= Rainfall Measurer
+
+A tool for collecting data about rainfall levels that the city of Wrocław shares.
+
+The data is taken from a file at the address. https://www.wroclaw.pl/open-data/dataset/deszczomierzeodczytdzienny_data
+
+== set destination bucket name
+ $ vi env-vars.yaml
+
+== build executable jar
+ $ ./gradlew shadowJar
+
+== deploy on google cloud
+ $ gcloud functions deploy fetch_function --source=build/libs/ --entry-point com.zamolski.rainfallmeasurer.FetchFunction --trigger-topic rainfall-topic --env-vars-file env-vars.yaml --runtime java17 --region europe-central2
